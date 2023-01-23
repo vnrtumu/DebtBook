@@ -2,6 +2,10 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 
+import FontSize from '../../assets/constants/FontSize';
+import Colors from '../../assets/constants/Colors';
+import Font from '../../assets/constants/Font';
+
 const Dots = ({selected}) => {
   let backgroundColor;
 
@@ -21,36 +25,38 @@ const Dots = ({selected}) => {
 
 const Skip = ({...props}) => (
   <TouchableOpacity style={{marginHorizontal: 10}} {...props}>
-    <Text style={{fontSize: 16}}>Skip</Text>
+    <Text style={{fontSize: 16, fontFamily: Font['poppins-bold']}}>Skip</Text>
   </TouchableOpacity>
 );
 
 const Next = ({...props}) => (
   <TouchableOpacity style={{marginHorizontal: 10}} {...props}>
-    <Text style={{fontSize: 16}}>Next</Text>
+    <Text style={{fontSize: 16, fontFamily: Font['poppins-bold']}}>Next</Text>
   </TouchableOpacity>
 );
 
 const Done = ({...props}) => (
   <TouchableOpacity style={{marginHorizontal: 10}} {...props}>
-    <Text style={{fontSize: 16}}>Done</Text>
+    <Text style={{fontSize: 16, fontFamily: Font['poppins-bold']}}>Done</Text>
   </TouchableOpacity>
 );
-const OnbordingScreen = () => {
+const OnbordingScreen = ({navigation}) => {
   return (
     <Onboarding
       SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DoneButtonComponent={Done}
       DotComponent={Dots}
-      // onSkip={() => navigation.replace('Login')}
-      // onDone={() => navigation.navigate('Login')}
+      onSkip={() => navigation.replace('Welcome')}
+      onDone={() => navigation.navigate('Welcome')}
+      titleStyles={Font['poppins-bold']}
+      subTitleStyles={Font['poppins-semiBold']}
       pages={[
         {
           backgroundColor: '#fff',
           image: (
             <Image
-              source={require('../assets/img/ob0.jpeg')}
+              source={require('../../assets/img/onb3.jpeg')}
               style={styles.img}
             />
           ),
@@ -61,7 +67,7 @@ const OnbordingScreen = () => {
           backgroundColor: '#fff',
           image: (
             <Image
-              source={require('../assets/img/onb1.jpeg')}
+              source={require('../../assets/img/onb1.jpeg')}
               style={styles.img}
             />
           ),
@@ -72,7 +78,7 @@ const OnbordingScreen = () => {
           backgroundColor: '#fff',
           image: (
             <Image
-              source={require('../assets/img/onb2.jpeg')}
+              source={require('../../assets/img/onb2.jpeg')}
               style={styles.img}
             />
           ),

@@ -1,9 +1,8 @@
-import {View, Text} from 'react-native';
 import React from 'react';
-import OnbordingScreen from './src/screens/OnbordingScreen';
+import AuthStack from './src/nav/AuthStack';
 
 const App = () => {
-  return <OnbordingScreen />;
+  return <AuthStack />;
 };
 
 export default App;
