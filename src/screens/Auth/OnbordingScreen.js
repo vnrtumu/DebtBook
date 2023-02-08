@@ -91,11 +91,6 @@ const OnbordingScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   img: {
     width: 400,
     height: 300,

@@ -1,3 +1,4 @@
+import React, {useState, useContext} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -5,15 +6,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
 import Spacing from '../../assets/constants/Spacing';
 import FontSize from '../../assets/constants/FontSize';
 import Colors from '../../assets/constants/Colors';
 import Font from '../../assets/constants/Font';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AppTextInput from '../../components/AppTextInput';
+import {AuthContext} from '../../nav/AuthProvider';
 
 const RegisterScreen = ({navigation}) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+
+  const {register} = useContext(AuthContext);
+
   return (
     <SafeAreaView>
       <View style={styles.mainContainer}>
@@ -24,12 +31,27 @@ const RegisterScreen = ({navigation}) => {
           </Text>
         </View>
         <View style={styles.form}>
-          <AppTextInput placeholder="Email" />
-          <AppTextInput placeholder="Password" />
-          <AppTextInput placeholder="Confirm Password" />
+          <AppTextInput
+            placeholder="Email"
+            onChangeText={userEmail => setEmail(userEmail)}
+          />
+          <AppTextInput
+            placeholder="Password"
+            onChangeText={userPassword => setPassword(userPassword)}
+            secureTextEntry={true}
+          />
+          <AppTextInput
+            placeholder="Confirm Password"
+            secureTextEntry={true}
+            onChangeText={userConfirmPassword =>
+              setConfirmPassword(userConfirmPassword)
+            }
+          />
         </View>
 
-        <TouchableOpacity style={styles.signUpBtn}>
+        <TouchableOpacity
+          style={styles.signUpBtn}
+          onPress={() => register(email, password)}>
           <Text style={styles.signUpText}>Sign up</Text>
         </TouchableOpacity>
         <TouchableOpacity

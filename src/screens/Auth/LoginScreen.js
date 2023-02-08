@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -13,8 +13,12 @@ import Font from '../../assets/constants/Font';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import AppTextInput from '../../components/AppTextInput';
+import {AuthContext} from '../../nav/AuthProvider';
 
 const LoginScreen = ({navigation}) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const {login} = useContext(AuthContext);
   return (
     <SafeAreaView>
       <View style={styles.mainContainer}>
@@ -25,15 +29,24 @@ const LoginScreen = ({navigation}) => {
           </Text>
         </View>
         <View style={styles.formWrap}>
-          <AppTextInput placeholder="Email" />
-          <AppTextInput placeholder="Password" />
+          <AppTextInput
+            placeholder="Email"
+            onChangeText={userEmail => setEmail(userEmail)}
+          />
+          <AppTextInput
+            placeholder="Password"
+            secureTextEntry={true}
+            onChangeText={userPassword => setPassword(userPassword)}
+          />
         </View>
 
         <View>
           <Text style={styles.forgotBtn}>Forgot your password ?</Text>
         </View>
 
-        <TouchableOpacity style={styles.singinWrap}>
+        <TouchableOpacity
+          style={styles.singinWrap}
+          onPress={() => login(email, password)}>
           <Text style={styles.signText}>Sign in</Text>
         </TouchableOpacity>
         <TouchableOpacity

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "643102910378",
+    "project_id": "debt-book-2dac3",
+    "storage_bucket": "debt-book-2dac3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643102910378:android:45ba9f6b6059e14775edd3",
+        "android_client_info": {
+          "package_name": "com.debtbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643102910378-e3vjp845176bbsdag2tkdjfiuai7l8kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACkP799S2wXpjtp1HAyY8I2GywVRyzoQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643102910378-e3vjp845176bbsdag2tkdjfiuai7l8kj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "643102910378-2pdvfhburrtas1e03qmu4oh4d75hri5b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.debtbook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

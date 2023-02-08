@@ -4,6 +4,9 @@ const dark = '#626262';
 const blue = '#1F41BB';
 const gray = '#ECECEC';
 const lightBlue = '#f1f4ff';
+const icon = '#C3BDBD';
+const greenShade = '#DEF2E3';
+const darkGreen = '#0d3629';
 
 export default {
   darkText: dark,
@@ -15,4 +18,6 @@ export default {
   borderWithOpacity: '#1f41bb',
   lightPrimary: lightBlue,
   gray: gray,
+  appBackground: greenShade,
+  secondBack: darkGreen,
 };

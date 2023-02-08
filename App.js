@@ -1,8 +1,13 @@
 import React from 'react';
-import AuthStack from './src/nav/AuthStack';
+import {AuthProvider} from './src/nav/AuthProvider';
+import Routes from './src/nav/Routes';
 
 const App = () => {
-  return <AuthStack />;
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  );
 };
 
 export default App;
