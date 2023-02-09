@@ -1,21 +1,14 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import Spacing from '../assets/constants/Spacing';
 import FontSize from '../assets/constants/FontSize';
 import Colors from '../assets/constants/Colors';
 import Font from '../assets/constants/Font';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const NewContat = ({cardstyle}) => {
+const NewContat = ({navigation, cardstyle, onPress}) => {
   return (
-    <TouchableOpacity style={[cardstyle, styles.cardWrap]}>
+    <TouchableOpacity style={[cardstyle, styles.cardWrap]} onPress={onPress}>
       <View style={styles.imgWrap}>
         <Image
           source={require('../assets/img/holder.jpg')}
@@ -54,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '900',
     fontFamily: Font['poppins-bold'],
-    color: Colors.text,
+    color: Colors.secondBack,
   },
   numText: {
     fontSize: 12,
@@ -67,7 +60,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: Font['poppins-bold'],
     marginBottom: 10,
-    color: Colors.text,
+    color: Colors.secondBack,
   },
 });
 

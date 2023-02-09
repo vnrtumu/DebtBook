@@ -12,17 +12,18 @@ import Colors from '../assets/constants/Colors';
 import Font from '../assets/constants/Font';
 
 const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
-const AccountCard = ({title, icon, style, balance}) => {
+const AccountCard = ({title, icon, style, balance, disabledBtn, cardStyle}) => {
   return (
-    <TouchableOpacity style={styles.accCard}>
+    <TouchableOpacity
+      style={[cardStyle, styles.accCard]}
+      disabled={disabledBtn}>
       <Text style={styles.cardHeaderText}>{title}</Text>
       <View style={styles.content}>
         <Icon
           name={icon}
           size={20}
-          color={Colors.text}
+          color={Colors.secondBack}
           style={styles.iconStyle}
         />
         <Text style={styles.amtStyle}>
@@ -37,8 +38,6 @@ const styles = StyleSheet.create({
   accCard: {
     backgroundColor: Colors.background,
     borderRadius: 15,
-    width: width * 0.43,
-    // height: height / 7,
     paddingHorizontal: 20,
     justifyContent: 'center',
     paddingVertical: 15,
@@ -49,21 +48,21 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: Font['poppins-bold'],
     marginBottom: 10,
-    color: Colors.text,
+    color: Colors.secondBack,
   },
   content: {
     flexDirection: 'row',
     marginBottom: 10,
   },
   iconStyle: {
-    color: Colors.text,
+    color: Colors.secondBack,
     marginTop: 3,
   },
   amtStyle: {
     fontSize: 20,
     fontWeight: 'bold',
     fontFamily: Font['poppins-bold'],
-    color: Colors.text,
+    color: Colors.secondBack,
     marginHorizontal: 10,
   },
 });
