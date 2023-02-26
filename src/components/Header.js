@@ -3,9 +3,11 @@ import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../assets/constants/Colors';
 import Font from '../assets/constants/Font';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Header = ({
   navigation,
+  title,
   onPress,
   showIcon,
   showTitle,
@@ -13,6 +15,8 @@ const Header = ({
   icon,
   style,
   showImage,
+  AddBtn,
+  actionPress,
 }) => {
   return (
     <View style={[style, styles.mainContainer]}>
@@ -26,15 +30,21 @@ const Header = ({
         </TouchableOpacity>
       </View>
       <View style={styles.titleContainer}>
-        {showTitle === true && <Text style={styles.titleText}>Profile</Text>}
+        {showTitle === true && <Text style={styles.titleText}>{title}</Text>}
       </View>
       <View style={styles.ImageContainer}>
-        {showImage === true && (
-          <Image
-            source={require('../assets/img/holder.jpg')}
-            style={styles.imgStyle}
-          />
-        )}
+        <TouchableOpacity onPress={actionPress}>
+          {showImage === true && (
+            <Image
+              source={require('../assets/img/holder.jpg')}
+              style={styles.imgStyle}
+            />
+          )}
+
+          {AddBtn === true && (
+            <Icon name="add-circle" color={Colors.secondBack} size={32} />
+          )}
+        </TouchableOpacity>
       </View>
     </View>
   );

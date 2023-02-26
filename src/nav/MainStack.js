@@ -8,7 +8,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from '../screens/Main/HomeScreen';
 import BookScreen from '../screens/Main/BookScreen';
-import AddBook from '../screens/Main/AddBook';
+import AddContact from '../screens/Main/AddContact';
 import ViewBook from '../screens/Main/ViewBook';
 import UpdateBook from '../screens/Main/UpdateBook';
 import ProfileScreen from '../screens/Main/ProfileScreen';
@@ -37,8 +37,9 @@ const BookStack = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="Book" component={BookScreen} />
-      <Stack.Screen name="ViewBook" component={ViewBook} />
-      <Stack.Screen name="UpdateBook" component={UpdateBook} />
+      <Stack.Screen name="ViewContact" component={ViewContact} />
+      <Stack.Screen name="AddContact" component={AddContact} />
+      {/* <Stack.Screen name="UpdateBook" component={UpdateBook} /> */}
     </Stack.Navigator>
   );
 };

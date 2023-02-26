@@ -15,45 +15,25 @@ import Font from '../../assets/constants/Font';
 import {AuthContext} from '../../nav/AuthProvider';
 
 import Header from '../../components/Header';
+import HomeCard from '../../components/HomeCard';
+import AccountCard from '../../components/AccountCard';
 import NewContat from '../../components/NewContat';
+import AppTextInput from '../../components/AppTextInput';
+import CustomInput from '../../components/CustomInput';
 
-const BookScreen = ({navigation}) => {
+const AddContact = ({navigation}) => {
   return (
     <SafeAreaView style={styles.main}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.mainWrap}>
           <Header
             style={styles.header}
-            icon="menu"
-            showIcon={true}
+            showTitle={true}
+            onPress={() => navigation.goBack()}
             showImage={false}
-            AddBtn={true}
-            actionPress={() => navigation.navigate('AddContact')}
+            title="Add Contact"
           />
-          <NewContat
-            cardstyle={styles.contactCard}
-            onPress={() => navigation.navigate('ViewContact')}
-          />
-          <NewContat
-            cardstyle={styles.contactCard}
-            onPress={() => navigation.navigate('ViewContact')}
-          />
-          <NewContat
-            cardstyle={styles.contactCard}
-            onPress={() => navigation.navigate('ViewContact')}
-          />
-          <NewContat
-            cardstyle={styles.contactCard}
-            onPress={() => navigation.navigate('ViewContact')}
-          />
-          <NewContat
-            cardstyle={styles.contactCard}
-            onPress={() => navigation.navigate('ViewContact')}
-          />
-          <NewContat
-            cardstyle={styles.contactCard}
-            onPress={() => navigation.navigate('ViewContact')}
-          />
+          <CustomInput />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -80,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BookScreen;
+export default AddContact;

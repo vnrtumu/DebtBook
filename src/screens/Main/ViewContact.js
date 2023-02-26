@@ -29,6 +29,7 @@ const ViewContact = ({navigation}) => {
             showTitle={true}
             onPress={() => navigation.goBack()}
             showImage={false}
+            title="Profile"
           />
 
           <View style={styles.profileHeader}>

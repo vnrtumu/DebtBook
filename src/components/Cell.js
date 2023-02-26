@@ -9,12 +9,12 @@ import React from 'react';
 import Font from '../assets/constants/Font';
 import Colors from '../assets/constants/Colors';
 
-const Cell = ({title, value, isCurrency, cellStyle, isBtn}) => {
+const Cell = ({title, value, isCurrency, cellStyle, isBtn, onPress}) => {
   return (
     <View style={[cellStyle, styles.cellWrap]}>
       <Text style={styles.cellTitle}>{title}</Text>
       {isBtn === true ? (
-        <TouchableOpacity style={styles.btnStyle}>
+        <TouchableOpacity style={styles.btnStyle} onPress={onPress}>
           <Text style={styles.cellValue}>
             {isCurrency === true && '\u20B9'} {value}
           </Text>
